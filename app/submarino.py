@@ -14,10 +14,8 @@ class Submarino():
         if hang == 'L':
             h = self.hangs.index(self.direction) - 1
             self.direction = self.hangs[h % 4]
-            # print("depois do L:", h%4)
         else:
             h = self.hangs.index(self.direction) + 1
-            # print("depois do R:", h%4)
             self.direction = self.hangs[h % 4]
 
     def move(self):
