@@ -13,7 +13,7 @@ class Controller():
         seq = self.receber_comandos()
         unit = (x for x in seq)
         for uc in unit:
-            if uc == "D" or uc == 'S':
+            if uc == "D" or uc == 'U':
                 self.down_submarine(uc)
             elif uc == 'R' or uc == 'L':
                 self.turn_submarine(uc)

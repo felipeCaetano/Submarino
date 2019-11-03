@@ -100,3 +100,15 @@ class SubmarineControllerTester(TestCase):
         with patch('builtins.input', return_value=command_input):
             self.controller.tratador()
         self.assertEqual(self.controller.pos_submarine(), [0, 1, -1, 'NORTH'])
+
+    def test_controller_entrada1(self):
+        command_input = 'LMRDDMMUU'
+        with patch('builtins.input', return_value=command_input):
+            self.controller.tratador()
+        self.assertEqual(self.controller.pos_submarine(), [-1, 2, 0, 'NORTH'])
+
+    def test_controller_entrada2(self):
+        command_input = 'RMMLMMMDDLL'
+        with patch('builtins.input', return_value=command_input):
+            self.controller.tratador()
+        self.assertEqual(self.controller.pos_submarine(), [2, 3, -2, 'SOUTH'])
